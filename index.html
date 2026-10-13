@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<!-- Preload critical fonts -->
+<link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" type="font/woff2" crossorigin>
+
+<!-- Optimize page performance -->
+<meta name="theme-color" content="#ff6fb7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#100a19" media="(prefers-color-scheme: dark)">
+
+<!-- Touch optimization for mobile -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100a19" />
+  <meta name="description" content="A magical birthday experience crafted with love for Shraddha ✨" />
+  <title>A Date to Remember ♡ — Happy Birthday, Shraddha!</title>
+
+  <!-- Preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts - Enhanced typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Smooth scroll behavior -->
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div id="starField" class="star-field" aria-hidden="true"></div>
+
+  <!-- Particle effect layer -->
+  <div class="particle-container" aria-hidden="true" id="particles"></div>
+
+  <main class="app-shell">
+
+    <header class="top-intro">
+      <span class="eyebrow">✨ A LITTLE MOMENT, JUST FOR YOU ✨</span>
+      <p class="top-subtitle">Some days are worth waiting for...</p>
+      <div class="header-divider" aria-hidden="true"></div>
+    </header>
+
+    <section id="countdownPhase" class="countdown-layout">
+
+      <article class="glass-card clock-card">
+        <div class="card-heading">
+          <span class="tiny-label">⏰ THE MOMENT BEFORE MIDNIGHT</span>
+          <span class="heading-sparkle" aria-hidden="true">✦</span>
+        </div>
+
+        <div class="clock-wrap">
+          <svg
+            id="analogClock"
+            class="analog-clock"
+            viewBox="0 0 320 320"
+            role="img"
+            aria-label="Analog clock showing time until midnight"
+          >
+            <defs>
+              <filter id="clockGlow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle class="clock-outer-ring" cx="160" cy="160" r="151"></circle>
+            <circle class="clock-inner-face" cx="160" cy="160" r="142"></circle>
+
+            <g id="clockTicks"></g>
+            <g id="clockNumbers"></g>
+
+            <line id="hourHand" class="clock-hand hour-hand" x1="160" y1="160" x2="160" y2="91"></line>
+            <line id="minuteHand" class="clock-hand minute-hand" x1="160" y1="160" x2="160" y2="61"></line>
+
+            <circle class="clock-pin-halo" cx="160" cy="160" r="9"></circle>
+            <circle class="clock-pin" cx="160" cy="160" r="4"></circle>
+          </svg>
+        </div>
+
+        <div class="digital-clock-block">
+          <span class="tiny-label">TIME UNTIL MAGIC</span>
+          <div id="digitalTime" class="digital-time">11:59:50 PM</div>
+          <div id="digitalDate" class="digital-date">TUESDAY · 13 OCTOBER 2026</div>
+        </div>
+
+        <div class="clock-footer">
+          <span class="pulse-dot"></span>
+          <span id="clockStatus">Every second brings us closer...</span>
+        </div>
+      </article>
+
+      <article class="glass-card calendar-card">
+        <div class="calendar-top">
+          <div>
+            <span class="tiny-label">📅 A DATE TO REMEMBER</span>
+            <h2 id="calendarMonth">October <span>2026</span></h2>
+          </div>
+          <span class="calendar-icon" aria-hidden="true">♡</span>
+        </div>
+
+        <div class="calendar-grid calendar-weekdays">
+          <span>Sun</span><span>Mon</span><span>Tue</span>
+          <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+
+        <div id="calendarDays" class="calendar-grid calendar-days"></div>
+
+        <div id="calendarNote" class="calendar-note">
+          <span class="note-heart">♡</span>
+          <span>One particular date has a little magic.</span>
+        </div>
+
+        <div id="dateReveal" class="date-reveal">
+          <div id="revealNumber" class="reveal-number">14</div>
+          <div class="reveal-date-copy">
+            <span>OCTOBER</span>
+            <span>2026</span>
+          </div>
+          <span class="reveal-sparkle" aria-hidden="true">✦</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="messagePhase" class="message-panel">
+      <span id="messageEyebrow" class="eyebrow">JUST A LITTLE LONGER</span>
+      <h1 id="messageTitle">Some moments are worth waiting for.</h1>
+      <p id="messageDescription">And this one is almost here. ♡</p>
+
+      <div class="message-decoration" aria-hidden="true">
+        <span>✦</span><span>♡</span><span>✧</span>
+      </div>
+    </section>
+
+    <section id="welcomePhase" class="welcome-screen" hidden>
+      <div class="welcome-glow" aria-hidden="true"></div>
+
+      <span class="eyebrow">💗 MADE WITH A LITTLE EXTRA HEART 💗</span>
+      <div class="welcome-heart" aria-hidden="true">♡</div>
+
+      <h1 class="welcome-title">
+        Happy Birthday,<br />
+        <span>Shraddha!</span>
+      </h1>
+
+      <p class="welcome-description">
+        Some dates just feel a little more special. And today, the spotlight belongs to you. 💗✨
+      </p>
+
+      <button id="surpriseButton" class="surprise-button" type="button">
+        A Little Surprise Awaits <span>✦</span>
+      </button>
+
+      <p id="welcomeFootnote" class="welcome-footnote">
+        A little journey, made just for you with love...
+      </p>
+    </section>
+
+    <footer class="dev-controls">
+      <button id="replayButton" class="replay-button" type="button">
+        ↻ Replay Experience
+      </button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
